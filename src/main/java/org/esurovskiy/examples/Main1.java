@@ -1,21 +1,19 @@
 package org.esurovskiy.examples;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main1 {
     public static void main(String[] args) {
 
 
-        Box<Integer, String> box2 = new Box<>(1, "");
-        box2.setItem(10);
-        openBox(box2);
+        Box<Number, String> box2 = new Box<>((Number) 1, "");
+        Box<Number, String> box3 = new Box<>((Number) 2.5, "");
 
+        openBox(box2);
+        openBox(box3);
 
     }
 
-    static void openBox(Box<Integer, String> box) {
-        Integer item = box.getItem();
-        System.out.println(item * 2);
+    static void openBox(Box<Number, String> box) {
+        Number item = box.getItem();
+        System.out.println(item.doubleValue() * 2);
     }
 }
